@@ -27,8 +27,6 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
 int main() {
 
-	shader shader("./src/SimpleVertexShader.vertexshader", "./src/SimpleFragmentShader.fragmentshader");
-
 	//initGLFW
 	//set GLFW
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -60,7 +58,7 @@ int main() {
 		return NULL;
 	}
 
-	glfwGetFramebufferSize(window, &screenWithd, &screenHeight); //??????//
+	glfwGetFramebufferSize(window, &screenWithd, &screenHeight); 
 
 
 																 //que funcion se llama cuando se detecta una pulsaci�n de tecla en la ventana x
@@ -120,6 +118,8 @@ int main() {
 	//liberar el buffer de vertices
 	glBindVertexArray(0);
 
+	shader shader("./src/SimpleVertexShader.vertexshader", "./src/SimpleFragmentShader.fragmentshader");
+
 	//Bucle de dibujado (VENTANA)
 
 	while (!glfwWindowShouldClose(window)) {
@@ -154,7 +154,7 @@ int main() {
 		// bind index buffer if you want to render indexed data
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 		// indexed draw call
-		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);
 
 
 		// Swap the screen buffers
