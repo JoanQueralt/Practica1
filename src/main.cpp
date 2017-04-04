@@ -26,6 +26,8 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
 
 int main() {
+	
+	
 
 	//initGLFW
 	//set GLFW
@@ -61,7 +63,7 @@ int main() {
 	glfwGetFramebufferSize(window, &screenWithd, &screenHeight); 
 
 
-																 //que funcion se llama cuando se detecta una pulsaci�n de tecla en la ventana x
+																
 	glfwSetKeyCallback(window, key_callback);
 
 
@@ -81,11 +83,11 @@ int main() {
 	// Definir el EBO
 	GLuint IndexBufferObject[]{
 
-		3,0,2,
-		0,1,2 };
+		0,1,2,
+		0,2,3
 
-	// 
-	glfwGetTime();
+	};
+
 
 	// Crear los VBO, VAO y EBO
 
@@ -140,6 +142,10 @@ int main() {
 		shader.Use();
 
 		//Shader::USE(programID);
+
+		//GLuint temps;
+
+		glfwGetTime();
 
 		//glUseProgram(programID);
 		if (WIREFRAME == true) {
